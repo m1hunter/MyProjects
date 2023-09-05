@@ -1,25 +1,27 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> func2(std::string*);
-bool func(std::string*, std::string*);
+using namespace std;
+
+vector<int> func2(string*);
+bool func(string*, string*);
 
 int main()
 {
     int n;
-    std::cin >> n;
+    cin >> n;
     for (int i = 0; i < n; ++i)
     {
-        std::string a, b;
-        std::cin >> a >> b;
+        string a, b;
+        cin >> a >> b;
         if (a.size() == b.size() && func(&a, &b))
-            std::cout << "YES\n";
+            cout << "YES\n";
         else
-            std::cout << "NO\n";
+            cout << "NO\n";
     }
 }
 
-bool func(std::string* a, std::string* b)
+bool func(string* a, string* b)
 {
     while (a->size() > 0)
     {
@@ -29,11 +31,11 @@ bool func(std::string* a, std::string* b)
     return true;
 }
 
-std::vector<int> func2(std::string* s)
+vector<int> func2(string* s)
 {
-    std::string t = *s;
+    string t = *s;
     s->clear();
-    std::vector<int> v(0);
+    vector<int> v(0);
     for (int i = 1; i < t.size(); ++i)
     {
         if (t[0] == t[i])
